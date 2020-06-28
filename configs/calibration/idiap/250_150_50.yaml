@@ -1,0 +1,23 @@
+data_loader:
+  name: "IDIAP"
+  input_size: 224
+  config:
+    dataset_path: "datasets/IDIAPHeadPose"
+    preprocess_path: "datasets/IDIAPHeadPose"
+    biterion: False
+    euler_noise: 0 
+    quat_noise: [-250, -150, -50, 0]
+train:
+  loss_function: "bingham"
+  loss_parameters:
+    lookup_table_file: "precomputed/lookup_-500_0_40.dill"
+  device: "cuda"
+  num_outputs: 19
+  num_epochs: 20
+  num_channels: 3
+  batch_size: 32
+  learning_rate: 0.00005
+  model: "resnet18"
+  save_as: "calibration/idiap/250_150_50"
+  save_dir: "models/calibration/idiap/250_150_50"
+  resume: False 

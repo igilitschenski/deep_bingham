@@ -1,0 +1,18 @@
+data_loader:
+  name: "T_Less"
+  input_size: 224
+  config:
+     dataset_path: "datasets/t-less_v2"
+     hdf5: "tless.hdf5"
+     biterion: True
+     blur: False
+test:
+  loss_function: "von_mises"
+  device: "cuda:1"
+  num_outputs: 9 
+  num_channels: 3
+  batch_size: 32 
+  model: "resnet18"
+  model_path: "models/tless/vm_5/checkpoint_resnet18_4.tar"
+  resume: False
+

@@ -1,0 +1,18 @@
+data_loader:
+  name: "UPNAHeadPose"
+  input_size: 224
+  config:
+    dataset_path: "datasets/upna"
+    preprocess_path: "datasets/ryp_upna"
+    biterion: True
+    euler_noise: 0 
+    quat_noise: 
+test:
+  loss_function: "cosine"
+  device: "cuda"
+  num_outputs: 6 
+  num_channels: 3
+  batch_size: 32
+  model: "resnet18"
+  model_path: "models/baselines/upna/cosine/checkpoint_resnet18_9.tar"
+  resume: False 

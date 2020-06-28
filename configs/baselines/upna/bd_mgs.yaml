@@ -1,0 +1,24 @@
+data_loader:
+  name: "UPNAHeadPose"
+  input_size: 224
+  config:
+    dataset_path: "datasets/upna"
+    preprocess_path: "datasets/ryp_upna"
+    biterion: False
+    euler_noise: 0 
+    quat_noise: 
+train:
+  loss_function: "bingham"
+  loss_parameters:
+    lookup_table_file: "precomputed/lookup_-500_0_40.dill"
+    orthogonalization: "modified_gram_schmidt"
+  device: "cuda"
+  num_outputs: 19
+  num_epochs: 10 
+  num_channels: 3
+  batch_size: 32
+  learning_rate: 0.0001
+  model: "resnet18"
+  save_as: "baselines/upna/bd_mgs"
+  save_dir: "models/baselines/upna/bd_mgs"
+  resume: False 

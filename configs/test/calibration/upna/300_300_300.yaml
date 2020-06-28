@@ -1,0 +1,20 @@
+data_loader:
+  name: "UPNAHeadPose"
+  input_size: 224
+  config:
+    dataset_path: "datasets/upna"
+    preprocess_path: "datasets/ryp_upna"
+    biterion: False
+    euler_noise: 0 
+    quat_noise: [-300, -300, -300, 0]
+test:
+  loss_function: "bingham"
+  loss_parameters:
+    lookup_table_file: "precomputed/lookup_-500_0_40.dill"
+  device: "cuda"
+  num_outputs: 19
+  num_channels: 3
+  batch_size: 32
+  model: "resnet18"
+  model_path: "models/calibration/upna/300_300_300/checkpoint_resnet18_9.tar"
+  resume: False 

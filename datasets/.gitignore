@@ -1,0 +1,5 @@
+# Folder for placing the datasets. The actual datasets are not part of the 
+# repository.
+*
+!.gitignore
+!download_tless.sh

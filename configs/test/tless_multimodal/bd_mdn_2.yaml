@@ -1,0 +1,31 @@
+data_loader:
+  name: "T_Less"
+  input_size: 224
+  config:
+    dataset_path: "datasets/t-less_v2"
+    dirs: ["train_kinect/01", "train_kinect/02", "train_kinect/03",
+           "train_kinect/04", "train_kinect/05", "train_kinect/06",
+           "train_kinect/07", "train_kinect/08", "train_kinect/09",
+           "train_kinect/10", "train_kinect/11", "train_kinect/12",
+           "train_kinect/13", "train_kinect/14", "train_kinect/15",
+           "train_kinect/16", "train_kinect/17", "train_kinect/18",
+           "train_kinect/19", "train_kinect/20", "train_kinect/21",
+           "train_kinect/22", "train_kinect/23", "train_kinect/24",
+           "train_kinect/25", "train_kinect/26", "train_kinect/27",
+           "train_kinect/28", "train_kinect/29", "train_kinect/30"]
+    hdf5: "tless.hdf5"
+    biterion: False
+    blur: False
+test:
+  loss_function: "bingham_mdn"
+  loss_parameters:
+    lookup_table_file: "precomputed/lookup_-500_0_40.dill"
+    mixture_component_count: 2
+  device: "cuda:1"
+  floating_point_type: "double"
+  num_outputs: 40
+  num_channels: 3
+  batch_size: 32
+  model: "resnet18"
+  model_path: "models/tless_multimodal/bd_mdn_2/checkpoint_resnet18_49.tar"
+  resume: False

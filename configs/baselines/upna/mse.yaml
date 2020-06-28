@@ -1,0 +1,21 @@
+data_loader:
+  name: "UPNAHeadPose"
+  input_size: 224
+  config:
+    dataset_path: "datasets/upna"
+    preprocess_path: "datasets/ryp_upna"
+    biterion: False
+    euler_noise: 0 
+    quat_noise: 
+train:
+  loss_function: "mse"
+  device: "cuda"
+  num_outputs: 4
+  num_epochs: 10 
+  num_channels: 3
+  batch_size: 32
+  learning_rate: 0.0001
+  model: "resnet18"
+  save_as: "baselines/upna/mse"
+  save_dir: "models/baselines/upna/mse"
+  resume: False 

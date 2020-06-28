@@ -1,0 +1,7 @@
+# Directories used for storing models / logs
+runs/
+models/
+
+# Ignore IDE project configuration files.
+.idea/
+.vscode/

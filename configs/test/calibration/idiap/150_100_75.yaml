@@ -1,0 +1,21 @@
+data_loader:
+  name: "IDIAP"
+  input_size: 224
+  config:
+    dataset_path: "datasets/IDIAPHeadPose"
+    preprocess_path: "datasets/IDIAPHeadPose"
+    biterion: False
+    euler_noise: 0 
+    quat_noise: [-150, -100, -75, 0]
+test:
+  loss_function: "bingham"
+  loss_parameters:
+    lookup_table_file: "precomputed/lookup_-500_0_40.dill"
+  device: "cuda"
+  num_outputs: 19
+  num_epochs: 20
+  num_channels: 3
+  batch_size: 32
+  model: "resnet18"
+  model_path: "models/calibration/idiap/150_100_75/checkpoint_resnet18_4.tar"
+  resume: False 
