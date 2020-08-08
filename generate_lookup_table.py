@@ -13,7 +13,7 @@ def generate_bd_lookup_table():
     duration = time.time()
     utils.build_bd_lookup_table(
         "uniform", {"coords": coords, "bounds": (-500, 0), "num_points": 40},
-        "precomputed/lookup_-500_0_40.dill"))
+        "precomputed/lookup_-500_0_40.dill")
  
     duration = time.time() - duration
 
