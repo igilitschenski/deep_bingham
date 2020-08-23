@@ -35,7 +35,7 @@ In the training portion of the config file, specify the device/gpu number that y
 
 To run all the experiments in our paper,
 ```bash
-$ ./run_training.py
+$ ./run_training.sh
 ```
 ## Tensorboard
 A tensorboard providing training information can be started via
